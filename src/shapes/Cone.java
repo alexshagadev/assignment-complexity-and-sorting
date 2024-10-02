@@ -1,25 +1,15 @@
 package shapes;
 
-public class Cone
-{
-	protected double height;
-	protected double radius;
-	
-	public Cone(double height, double radius) {
-		this.radius = radius;
-		this.height = height;
+public class Cone extends Prism {
+	public Cone(double height, double side){
+		super(height, side);
 	}
 	
-	public double getRadius() {
-		return radius;
+	public double calcBaseArea() {
+		return Math.PI * getSide() * getSide();
 	}
 	
-	public double getHeight() {
-		return height;
+	public double calcVolume() {
+		return (1 / 3) * calcBaseArea() * getHeight();
 	}
-	
-	public double getBaseArea() {
-		return Math.PI * radius * radius;
-	}
-
 }

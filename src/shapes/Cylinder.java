@@ -1,29 +1,11 @@
 package shapes;
 
-public class Cylinder
-{
-	protected double radius;
-	protected double height;
-	
-	public Cylinder(double height, double radius) {
-		this.radius = radius;
-		this.height = height;
+public class Cylinder extends Prism {
+	public Cylinder(double height, double side) {
+		super(height, side);
 	}
 	
-	public double getRadius() {
-		return radius;
+	public double calcBaseArea() {
+		return Math.PI * getSide() * getSide();
 	}
-	
-	public double getHeight() {
-		return height;
-	}
-	
-	public double getBaseArea() {
-		return Math.PI * radius * radius;
-	}
-	
-	public double getVolume() {
-		return getBaseArea() * height;
-	}
-
 }

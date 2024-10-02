@@ -1,22 +1,15 @@
 package shapes;
 
-public class Pyramid
-{
-	protected double height;
-	protected double edge;
-	
-	public Pyramid(double height, double edge) {
-		this.edge = edge;
-		this.height = height;
+public class Pyramid extends Prism {	
+	public Pyramid(double height, double side) {
+		super(height, side);
 	}
 	
-	public double getEdge() {
-		return edge;
+	public double calcBaseArea() {
+		return getSide() * getSide();
 	}
 	
-	public double getHeight() {
-		return height;
+	public double calcolume() {
+		return (1 / 3) * calcBaseArea() * getHeight();
 	}
-
-
 }
