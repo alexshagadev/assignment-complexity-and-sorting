@@ -10,6 +10,6 @@ public class Cone extends Prism {
 	}
 	
 	public double calcVolume() {
-		return (1 / 3) * calcBaseArea() * getHeight();
+		return (1 / 3.0) * calcBaseArea() * getHeight();
 	}
 }
