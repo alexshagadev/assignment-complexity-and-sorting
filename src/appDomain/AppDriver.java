@@ -9,7 +9,8 @@ public class AppDriver
 	public static void main( String[] args )
 	{
 		// TODO Auto-generated method stub
-		File shapes1 = new File("./shapes1.txt");
+		
+		File shapes1 = new File("./res/shapes1.txt");
 		Scanner s1 = null;
 		
 		try
@@ -20,16 +21,17 @@ public class AppDriver
 		{
 			e.printStackTrace();
 		}
+		System.out.println("Here is the unsorted list of " + s1.next() + " shapes:");
 		
 		while( s1.hasNext() )
 		{
 			String name = s1.next();
 			System.out.println( name );
 
-			float height = s1.nextFloat();
+			String height = s1.next();
 			System.out.println( height );
 
-			float side = s1.nextFloat();
+			String side = s1.next();
 			System.out.println( side );
 		}
 
