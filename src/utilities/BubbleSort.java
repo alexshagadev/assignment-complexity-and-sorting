@@ -2,7 +2,7 @@ package utilities;
 
 public class BubbleSort
 {
-	public void sort(Array[] array)
+	public void sort(Float[] array)
 	{
 		int len = array.length;
 			
@@ -12,7 +12,7 @@ public class BubbleSort
 			{
 				if (array[j] > array[j+1])
 				{
-					int held = array[j];
+					float held = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = held;
 				}
