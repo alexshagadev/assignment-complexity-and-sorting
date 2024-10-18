@@ -105,8 +105,7 @@ public class AppDriver {
                     comparator = new Prism.VolumeComparator();
                     break;
                 case "h":
-                	// height is natural order
-                    comparator = null; 
+                    comparator = new Prism.HeightComparator(); 
                     break;
                 case "a":
                     comparator = new Prism.BaseAreaComparator();
