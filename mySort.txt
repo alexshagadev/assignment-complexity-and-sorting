@@ -1,0 +1,51 @@
+- Heap Sort
+
+The heap sort is a comparison based sorting algorithm that uses the binary heap data structure.
+The algorithm is made up of two phases and is typically slower than a properly implemented QuickSort. 
+In the first phase an array is converted into a max heap, then the highest element is recursively 
+extracted in the second phase in order to create a sorted array. The max heap is in a tree structure, 
+where each node is compared to it's child nodes and it is built bottom up with the majority of elements at the bottom.
+
+- Complexity Analysis
+
+Time Complexity: O(n log n)
+
+In step 1 of the HeapSort function, building the max heap requires calling the heapify function on each non leaf node from the bottom up.
+The higher the heap the more work, so the time it takes is from O(1) just above the leaf nodes up to O(log n) because more work is required to
+traverse higher heaps. However the total time it takes to build the heap is O(n) because they are built in a tree structure, so the majority of nodes are closer to the bottom where less work is required. 
+
+Step 2 of the HeapSort function extracts elements from the max heap one by one. This process requires swapping the root element with the last element and then reducing the heap size.
+Each extraction takes O(log n) time, multiplied by n elements results in a time complexity of O(n log n)
+
+- Pseudocode with counting analysis
+
+function HeapSort(array)
+
+	n = length of array O(1)
+
+Step 1 - Build max heap - Total operations: O(n). For each non leaf node in array, heapify function is called. 
+
+	iterate array starting at i = floor(n / 2) - 1 until i >= 0:
+		call heapify(array, n, i) : O(log n) per call, total O(n)
+
+Step 2 - Extract from heap one by one - Total operations: O(n log n). For each extraction a swap is performed(O(1)) and the heapify function is called(O(log n)).
+
+	iterate array starting at i = n - 1 until i > 0
+		swap element [0] and [i], moving max heap to end of array : O(1)
+		call heapify(array, n, i), reduced heap : O(log n) recursively, therefore O(n log n)
+
+function Heapify(array, n, i) - O(log n). Traverses height of tree to follow heap properties.
+
+	largest = i (root) : O(1)
+	right child = 2 * i + 2 : O(1)
+	left child = 2 * i + 1 : O(1)
+	
+	If left child is larger than root: O(1)
+		largest = left : O(1)
+
+	If right child is larger than root: O(1)
+		largest = right : O(1)
+
+	If largest is not root: swap O(1) + recursive call O(log n)
+		swap elements [i] and [largest] in array : O(1)
+		call heapify(array, n, largest), Recusively heapify sub tree : O(log n)
