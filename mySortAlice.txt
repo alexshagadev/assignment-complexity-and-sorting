@@ -1,0 +1,48 @@
+- Insertion Sort
+Insertion Sort algorithm goes through the array, taking one element at a time and placing it in the correct position within the already sorted portion of the array.
+
+- Complexity Analysis
+Time Complexity: O(n^2)
+
+- Pseudocode with counting analysis
+function InsertionSort(array)
+
+    n = length of array  	             // O(1)
+
+    // Step 1: Iterate through the array     // Total operations: O(n)
+    for j = 2 to n - 1                       // Outer loop runs (n-1) times
+        key = array[j]                       // O(1)
+        i = j - 1                            // O(1)
+
+    // Step 2: Shift elements to the right   // Total operations: O(n^2) in worst case
+        while i >= 0 and array[i] > key      // Comparisons in sorted portion
+            array[i + 1] = array[i]          // O(1)
+            i = i - 1                        // O(1)
+
+        array[i + 1] = key                   // O(1)                            
+
+
+- Selection Sort
+Selection Sort algorithm goes through the array and finds the lowest number in the unsorted part. It then swaps that lowest number with the first unsorted number. This process continues until the entire array is sorted.
+
+- Complexity Analysis
+Time Complexity: O(n^2)
+
+- Pseudocode with counting analysis
+function SelectionSort(array)
+
+    n = length of array                         // O(1)
+
+    // Step 1: Iterate through the array        // Total operations: O(n)
+    for i = 0 to n - 1                          // Outer loop runs (n) times
+        minIndex = i                            // O(1)
+
+    // Step 2: Find the minimum element         // Total operations: O(n)
+        for j = i + 1 to n - 1                  // Inner loop runs (n - i - 1) times
+            if array[j] < array[minIndex]       // O(1)
+                minIndex = j                    // O(1)
+
+    // Step 3: Swap the found minimum           // O(1)
+        if minIndex != i                        // O(1)
+            swap(array[i], array[minIndex])     // O(1)
+
