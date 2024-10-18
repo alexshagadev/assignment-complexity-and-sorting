@@ -43,16 +43,16 @@ public class MergeSort {
 
     /*
      * The merge function takes in the original array and also the left and right halves
-     * It then merges those sections, adding the smallest elements back into the main array one by one.
+     * It then merges those sections, adding the largest elements back into the main array one by one.
      */
     private <T extends Comparable<? super T>> void merge(T[] array, T[] left, T[] right) {
         int i = 0;
         int j = 0;
         int k = 0; 
 
-        // Merge the left and right arrays. The smallest element is added back into the main array.
+        // Merge the left and right arrays. The largest element is added back into the main array.
         while (i < left.length && j < right.length) {
-            if (left[i].compareTo(right[j]) <= 0) {
+            if (left[i].compareTo(right[j]) > 0) {
                 array[k++] = left[i++];
             } else {
                 array[k++] = right[j++];
@@ -100,7 +100,7 @@ public class MergeSort {
     
     // Merge but for comparator
     @SuppressWarnings("unchecked")
-	private static <T> void merge(T[] array, T[] left, T[] right, Comparator<T> comparator) {
+    private static <T> void merge(T[] array, T[] left, T[] right, Comparator<T> comparator) {
         int i = 0;
         int j = 0; 
         int k = 0; 
@@ -108,14 +108,14 @@ public class MergeSort {
         while (i < left.length && j < right.length) {
             if (comparator == null) {
                 // natural order
-                if (((Comparable<T>) left[i]).compareTo(right[j]) <= 0) {
+                if (((Comparable<T>) left[i]).compareTo(right[j]) > 0) {
                     array[k++] = left[i++];
                 } else {
                     array[k++] = right[j++];
                 }
             } else {
-            	// comparator
-                if (comparator.compare(left[i], right[j]) <= 0) {
+                // comparator
+                if (comparator.compare(left[i], right[j]) > 0) {
                     array[k++] = left[i++];
                 } else {
                     array[k++] = right[j++];
