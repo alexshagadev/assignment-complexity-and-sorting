@@ -179,12 +179,12 @@ public class AppDriver {
                     break;
                 case "s":
                 	// need to generalize and add comparable/comparator logic
-                    //SelectionSort.sort(shapesArray, comparator);
+                    SelectionSort.sort(shapesArray, comparator);
                 	sortMethodLetter = "s";
                     break;
                 case "i":
                 	// need to generalize and add comparable/comparator logic
-                    //InsertionSort.sort(shapesArray, comparator);
+                    InsertionSort.sort(shapesArray, comparator);
                 	sortMethodLetter = "i";
                     break;
                 case "m":
