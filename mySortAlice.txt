@@ -7,11 +7,11 @@ Time Complexity: O(n^2)
 - Pseudocode with counting analysis
 function InsertionSort(array)
 
-    n = length of array  	                                                        // O(1)
+    n = length of array  	                                                    // O(1)
 
     // Step 1: Iterate through the array                                            // Total operations: O(n)
     for j = 2 to n - 1                                                              // Outer loop runs (n-1) times
-        current = array[j]                                                              // O(1)
+        current = array[j]                                                          // O(1)
         i = j - 1                                                                   // O(1)
 
     // Step 2: Shift elements to the right                                          // Total operations: O(n^2) in worst case
